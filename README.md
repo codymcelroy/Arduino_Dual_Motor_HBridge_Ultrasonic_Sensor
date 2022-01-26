@@ -1,4 +1,8 @@
-# Arduino_Dual_Motor_HBridge_Ultrasonic_Sensor
+# Arduino Dual Motor H-Bridge Ultrasonic Sensor
+
+A simple robot design with 2 motors being controlled by a distance sensor
+
+
 
 
 
