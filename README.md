@@ -2,6 +2,7 @@
 
 A simple robot design with 2 motors being controlled by a distance sensor
 
+![Wiring Diagram](https://github.com/codymcelroy/Arduino_Dual_Motor_HBridge_Ultrasonic_Sensor/blob/master/references/Dual%20Motor%20Control%20with%20H%20Bridge%20and%20Ultrasonic%20Sensor.png)
 
 
 
@@ -15,3 +16,6 @@ A simple robot design with 2 motors being controlled by a distance sensor
 
 
 ## References
+
+* [Wiring Diagram](https://github.com/codymcelroy/Arduino_Dual_Motor_HBridge_Ultrasonic_Sensor/blob/master/references/Dual%20Motor%20Control%20with%20H%20Bridge%20and%20Ultrasonic%20Sensor.png)
+* [Schematics](https://github.com/codymcelroy/Arduino_Dual_Motor_HBridge_Ultrasonic_Sensor/blob/master/references/schematics.PNG)
