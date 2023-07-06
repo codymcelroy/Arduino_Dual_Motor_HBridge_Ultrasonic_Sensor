@@ -1,25 +1,61 @@
 #include <Arduino.h>
 #include <Motor.h>
 
-bbMotor motor(10,9,8);
-int speed = 250;
+const int trigPin = 3;
+const int echoPin = 2;
+long duration, cm;
+
+//motor A pinout
+int enA = 10;
+int in1 = 9;
+int in2 = 8;
+
+// motor B pinout
+int enB = 5;
+int in3 = 7;
+int in4 = 6;
+
+bbMotor motorA(enA,in1,in2);
+bbMotor motorB(enB,in3,in4);
 
 void setup() {
-motor.begin();
+  pinMode(trigPin, OUTPUT);
+  pinMode(echoPin, INPUT);
+  Serial.begin(9600);
+  motorA.begin();
+  motorB.begin();
 }
 
-void loop() {
-  for(int i=200; i<255; i++){
-    motor.forward(i);
-       Serial.print(i);
-    delay(200);
+void loop()
+{
+  digitalWrite(trigPin, LOW);
+  delayMicroseconds(5);
+  digitalWrite(trigPin, HIGH);
+  delayMicroseconds(10);
+  digitalWrite(trigPin, LOW);
 
-  }
-  delay(200);
-  for(int i=255; i>200; i--){
-    motor.backward(i);
-    Serial.print(i);
-    delay(200);
+  pinMode(echoPin, INPUT);
+  duration = pulseIn(echoPin, HIGH);
+  cm = (duration/2) / 29.1; 
+  Serial.print(cm);
+  Serial.println();
+
+if(cm >= 100){
+   // set speed to 200 out of possible range 0~255
+  motorA.forward(200);
+  motorB.forward(200);
+  Serial.print(cm);
+  Serial.println();
+}
  
+  if(cm <= 99){
+    motorA.stop(100);
+    motorB.stop(100);
+    delay(200);
+    //Turn
+    motorA.backward(150);
+    motorB.forward(150);
+    delay(1000);
   }
+
 }
