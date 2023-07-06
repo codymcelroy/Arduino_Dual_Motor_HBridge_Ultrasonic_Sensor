@@ -2,6 +2,9 @@
 
 A simple robot design with 2 motors being controlled by a distance sensor.
 
+[Explore on Tinkercad](https://www.tinkercad.com/things/7ilTwTA1gKO)
+
+
 ![Wiring Diagram](/references/Dual%20Motor%20Control%20with%20H%20Bridge%20and%20Ultrasonic%20Sensor.png)
 
 ## Motor Library
